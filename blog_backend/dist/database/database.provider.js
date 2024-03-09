@@ -5,6 +5,7 @@ const sequelize_typescript_1 = require("sequelize-typescript");
 const author_entity_1 = require("../entity/author.entity");
 const category_entity_1 = require("../entity/category.entity");
 const post_entity_1 = require("../entity/post.entity");
+const user_entity_1 = require("../entity/user.entity");
 require('dotenv').config();
 exports.databaseProviders = [
     {
@@ -23,7 +24,8 @@ exports.databaseProviders = [
             sequelize.addModels([
                 author_entity_1.AuthorTable,
                 category_entity_1.CategoryTable,
-                post_entity_1.PostTable
+                post_entity_1.PostTable,
+                user_entity_1.UserTable
             ]);
             return sequelize;
         }

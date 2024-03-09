@@ -83,7 +83,6 @@ let PostService = class PostService {
         else {
             response = {
                 status: 400,
-                data: created,
                 message: {
                     errors: [
                         'Houve um erro ao criar o post, tente mais tarde!'

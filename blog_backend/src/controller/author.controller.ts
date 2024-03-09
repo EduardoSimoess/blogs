@@ -7,8 +7,10 @@ import {
     Delete,
     Put,
     Query,
+    UseGuards
 } from '@nestjs/common';
 import { ApiTags, ApiCreatedResponse } from '@nestjs/swagger';
+import { RolesGuard } from 'src/middleware/handleAuth.middleware';
 import { ICreateAuthor, IUpdateAuthor } from 'src/model/author.model';
 import { IObjectResponse, IPagination } from 'src/model/response.model';
 import { AuthorService } from 'src/service/author.service';
@@ -19,6 +21,7 @@ export class AuthorController {
     constructor(private readonly authorService: AuthorService) {}
 
     @Get('select/:author_id')
+    @UseGuards(RolesGuard)
     @ApiCreatedResponse({
         status: 200,
         description: 'success',

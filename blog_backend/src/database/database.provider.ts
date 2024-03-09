@@ -2,6 +2,7 @@ import { Sequelize } from 'sequelize-typescript';
 import { AuthorTable } from 'src/entity/author.entity';
 import { CategoryTable } from 'src/entity/category.entity';
 import { PostTable } from 'src/entity/post.entity';
+import { UserTable } from 'src/entity/user.entity';
 require('dotenv').config();
 
 
@@ -23,7 +24,8 @@ export const databaseProviders = [
               sequelize.addModels([ 
                 AuthorTable,
                 CategoryTable,
-                PostTable
+                PostTable,
+                UserTable
               ]);
 
               return sequelize;

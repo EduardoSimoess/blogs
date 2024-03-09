@@ -44,7 +44,6 @@ __decorate([
     (0, swagger_1.ApiCreatedResponse)({
         status: 200,
         description: 'success',
-        type: 'CreatePlan',
     }),
     __param(0, (0, common_1.Param)('post_id')),
     __metadata("design:type", Function),
@@ -56,7 +55,6 @@ __decorate([
     (0, swagger_1.ApiCreatedResponse)({
         status: 200,
         description: 'success',
-        type: 'CreatePlan',
     }),
     __param(0, (0, common_1.Query)()),
     __metadata("design:type", Function),
@@ -68,7 +66,6 @@ __decorate([
     (0, swagger_1.ApiCreatedResponse)({
         status: 200,
         description: 'success',
-        type: 'CreatePlan',
     }),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
@@ -80,7 +77,6 @@ __decorate([
     (0, swagger_1.ApiCreatedResponse)({
         status: 201,
         description: 'success',
-        type: 'CreatePlan',
     }),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
@@ -92,7 +88,6 @@ __decorate([
     (0, swagger_1.ApiCreatedResponse)({
         status: 200,
         description: 'success',
-        type: 'CreatePlan',
     }),
     __param(0, (0, common_1.Param)('post')),
     __metadata("design:type", Function),

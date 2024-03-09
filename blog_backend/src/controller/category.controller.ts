@@ -21,7 +21,6 @@ export class CategoryController {
     @ApiCreatedResponse({
         status: 200,
         description: 'success',
-        type: 'CreatePlan',
     })
     async selectCategory(@Param('category_id') category_id: number): Promise<IObjectResponse> {
         return this.categoryService.select(category_id);
@@ -31,7 +30,6 @@ export class CategoryController {
     @ApiCreatedResponse({
         status: 200,
         description: 'success',
-        type: 'CreatePlan',
     })
     async selectAllCategorys(): Promise<IObjectResponse> {
         return await this.categoryService.selectAll();
@@ -41,7 +39,6 @@ export class CategoryController {
     @ApiCreatedResponse({
         status: 201,
         description: 'success',
-        type: 'CreatePlan',
     })
     async updateCategory(@Body() category: IUpdateCategory): Promise<IObjectResponse> {
         return this.categoryService.update({ ...category });
@@ -51,7 +48,6 @@ export class CategoryController {
     @ApiCreatedResponse({
         status: 200,
         description: 'success',
-        type: 'CreatePlan',
     })
     async createCategory(@Body() category: ICreateCategory): Promise<IObjectResponse> {
         return this.categoryService.create(category);
@@ -61,7 +57,6 @@ export class CategoryController {
     @ApiCreatedResponse({
         status: 201,
         description: 'success',
-        type: 'CreatePlan',
     })
     async deleteCategory(@Param('category_id') category_id: number): Promise<IObjectResponse> {
         return this.categoryService.delete(category_id);

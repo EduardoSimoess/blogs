@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthorController = void 0;
 const common_1 = require("@nestjs/common");
 const swagger_1 = require("@nestjs/swagger");
+const handleAuth_middleware_1 = require("../middleware/handleAuth.middleware");
 const author_model_1 = require("../model/author.model");
 const response_model_1 = require("../model/response.model");
 const author_service_1 = require("../service/author.service");
@@ -41,6 +42,7 @@ let AuthorController = class AuthorController {
 exports.AuthorController = AuthorController;
 __decorate([
     (0, common_1.Get)('select/:author_id'),
+    (0, common_1.UseGuards)(handleAuth_middleware_1.RolesGuard),
     (0, swagger_1.ApiCreatedResponse)({
         status: 200,
         description: 'success',

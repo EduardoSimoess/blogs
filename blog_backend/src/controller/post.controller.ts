@@ -23,7 +23,6 @@ export class PostController {
   @ApiCreatedResponse({
     status: 200,
     description: 'success',
-    type: 'CreatePlan',
   })
   async selectPost(@Param('post_id') post_id: number): Promise<IObjectResponse> {
     return this.postService.select(post_id);
@@ -33,7 +32,6 @@ export class PostController {
   @ApiCreatedResponse({
     status: 200,
     description: 'success',
-    type: 'CreatePlan',
   })
   async selectAllPosts(@Query() params: IPagination): Promise<IObjectResponse> {
     return this.postService.selectAll(params);
@@ -43,7 +41,6 @@ export class PostController {
   @ApiCreatedResponse({
     status: 200,
     description: 'success',
-    type: 'CreatePlan',
   })
   async createPost(@Body() post: ICreatePost): Promise<IObjectResponse> {
     return this.postService.create(post);
@@ -53,7 +50,6 @@ export class PostController {
   @ApiCreatedResponse({
     status: 201,
     description: 'success',
-    type: 'CreatePlan',
   })
   async updatePost(@Body() post: IUpdatePost): Promise<IObjectResponse> {
     return this.postService.update({ ...post });
@@ -63,7 +59,6 @@ export class PostController {
   @ApiCreatedResponse({
     status: 200,
     description: 'success',
-    type: 'CreatePlan',
   })
   async deletePost(@Param('post') post: number): Promise<IObjectResponse> {
     return this.postService.delete(post);

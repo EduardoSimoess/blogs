@@ -12,6 +12,7 @@ const database_module_1 = require("./database/database.module");
 const author_module_1 = require("./module/author.module");
 const category_module_1 = require("./module/category.module");
 const post_module_1 = require("./module/post.module");
+const user_module_1 = require("./module/user.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -21,7 +22,8 @@ exports.AppModule = AppModule = __decorate([
             database_module_1.DatabaseModule,
             author_module_1.AuthorModule,
             category_module_1.CategoryModule,
-            post_module_1.PostModule
+            post_module_1.PostModule,
+            user_module_1.UserModule
         ],
         controllers: [],
         providers: [],

@@ -76,7 +76,6 @@ let CategoryService = class CategoryService {
         else {
             response = {
                 status: 400,
-                data: created,
                 message: {
                     errors: [
                         'Houve um erro ao criar a categoria, tente mais tarde!'

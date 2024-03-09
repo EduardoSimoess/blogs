@@ -78,7 +78,6 @@ let AuthorService = class AuthorService {
         else {
             response = {
                 status: 400,
-                data: created,
                 message: {
                     errors: [
                         'Houve um erro ao criar o autor, tente mais tarde!'
