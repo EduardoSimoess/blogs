@@ -21,7 +21,6 @@ export class AuthorController {
     constructor(private readonly authorService: AuthorService) {}
 
     @Get('select/:author_id')
-    @UseGuards(RolesGuard)
     @ApiCreatedResponse({
         status: 200,
         description: 'success',

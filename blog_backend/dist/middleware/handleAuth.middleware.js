@@ -14,15 +14,12 @@ let RolesGuard = class RolesGuard {
     async canActivate(context) {
         const request = context.switchToHttp().getRequest();
         const authHeader = request.headers['authorization'];
-        const token = authHeader && authHeader.split(" ")[1];
         const secret = process.env.SECRET;
-        console.log(secret);
         try {
             jwt.verify(authHeader, secret);
             return true;
         }
         catch (erro) {
-            console.log(erro);
             return false;
         }
     }
