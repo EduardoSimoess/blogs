@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios, { AxiosResponse } from "axios";
-import { ILogin } from "@/app/interfaces/login.interface";
-import { IObjectResponse } from "@/app/interfaces/response.interface";
-import { FaEye, FaUser, FaEyeSlash } from 'react-icons/fa';
+import { ILogin } from "@/interfaces/login.interface";
+import { IObjectResponse } from "@/interfaces/response.interface";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 require('dotenv').config();
 
 
-export default function Login() {
+export default function LoginForms() {
 
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
@@ -62,12 +62,10 @@ export default function Login() {
     }
 
     const handleBlurEmail = () => {
-        /* controlBtn(); */
         wrongMailText();
     }
 
     const handleBlurPassword = () => {
-        /* controlBtn(); */
         insuficientPassword();
     }
 
@@ -88,13 +86,6 @@ export default function Login() {
           }
     }
     return (
-        <div className="text-gray-500 font-sans pt-32 flex flex-col items-center text-center gap-6">
-            <div className="flex flex-row gap-4 items-center font-extrabold text-3xl">
-                <FaUser/>
-                <h1 className="">login escritores</h1>
-            </div>
-            <p className="text-sm">{`Publique artigos de maneira fácil e rápida ;)`}</p>
-
             <div className="flex flex-col gap-4">
                 <div className="flex flex-col gap-2">
                     <div className="flex flex-row justify-start w-full">
@@ -132,6 +123,5 @@ export default function Login() {
                 className="bg-red-500 p-4 text-white font-extrabold rounded-lg mt-4"
                 >Login</button>           
             </div>
-        </div>
     )
 }
