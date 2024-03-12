@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios, { AxiosResponse } from "axios";
 import { ILogin } from "@/interfaces/login.interface";
 import { IObjectResponse } from "@/interfaces/response.interface";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { GlobalContext } from "@/provider/global";
 require('dotenv').config();
 
 
@@ -14,6 +15,7 @@ export default function LoginForms() {
     const [disableBtn, setDisableBtn] = useState<boolean>(true);
     const [wrongMail, setWrongMail] = useState<boolean>(false);
     const [insufPassword, setInsufPassword] = useState<boolean>(false);
+    const { setIncorrect } = useContext(GlobalContext);
     const apiUrl = process.env.API || 'http://localhost:3000';
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>, setFunction: React.Dispatch<React.SetStateAction<string>>) => {
@@ -77,9 +79,12 @@ export default function LoginForms() {
             const response: AxiosResponse<IObjectResponse> = await axios.post<any>(
               `${apiUrl}/user/login`, body
             );  
-            const token = response.data.data.token;
-            localStorage.setItem('token', token);
-            console.log(token);
+            const { data } = response.data;
+            if(!data) {
+                setIncorrect(true);
+            } else {
+                localStorage.setItem('token', data.token);
+            }
             
           } catch (error) {
             console.log(error);
